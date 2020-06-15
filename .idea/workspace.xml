@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2f1ac3-9fdd-4bf2-bff0-1a951c3728b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideoTrimDelegate.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/video_trimming.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/video_trimming.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,10 +105,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="208" y="31" key="SettingsEditor/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592233949673" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592230052620">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592250850864">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592230052620" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592250850864" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1592229709905">
       <screen x="0" y="23" width="1440" height="836" />
     </state>

@@ -3,15 +3,14 @@ package com.steelkiwi.videotrimming
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.annotation.NonNull
 import com.steelkiwi.videotrimming.trim.TrimmerActivity
 import com.steelkiwi.videotrimming.trim.TrimmerActivity.Companion.EXTRA_INPUT_URI
 import com.steelkiwi.videotrimming.trim.TrimmerActivity.Companion.REQUEST_VIDEO_TRIMMER
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -19,26 +18,38 @@ import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import java.io.File
 
+
 public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private lateinit var channel: MethodChannel
     private var activityPluginBinding: ActivityPluginBinding? = null
 
+    private var delegate: VideoTrimDelegate? = null
+
+
     override fun onAttachedToEngine(@NonNull plugin: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(plugin.flutterEngine.dartExecutor, "videotrimming")
-        channel.setMethodCallHandler(this);
+
+
+        setupEngine(plugin.binaryMessenger);
+
     }
 
     companion object {
+        private val CHANNEL = "plugins.steelkiwi.com/trimmer_video"
+        private val ACTION_CHANEL_TRIM_VIDEO = "trim_video"
+
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            val channel = MethodChannel(registrar.messenger(), "videotrimming")
+            val channel = MethodChannel(registrar.messenger(), CHANNEL)
             channel.setMethodCallHandler(VideotrimmingPlugin())
+
+
+
         }
     }
 
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-        if (call.method == "trim_video") {
+        if (call.method == ACTION_CHANEL_TRIM_VIDEO) {
             val sourcePath = call.argument<String>("source_path")
             startTrimActivity(Uri.fromFile(File(sourcePath)));
         } else {
@@ -58,17 +69,33 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
     }
 
     override fun onDetachedFromActivity() {
-        TODO("Not yet implemented")
-    }
+        delegate?.let { activityPluginBinding?.removeActivityResultListener(it) };
+        activityPluginBinding = null;
+        delegate = null; }
 
     override fun onReattachedToActivityForConfigChanges(p0: ActivityPluginBinding) {
-        TODO("Not yet implemented")
+        onAttachedToActivity(p0);
     }
 
-    override fun onAttachedToActivity(p0: ActivityPluginBinding) {
-        this.activityPluginBinding = p0; }
+    private fun setupActivity(activity: Activity): VideoTrimDelegate? {
+        delegate = VideoTrimDelegate(activity)
+        return delegate
+    }
+
+    override fun onAttachedToActivity(activityPluginBinding: ActivityPluginBinding) {
+        setupActivity(activityPluginBinding.activity);
+        this.activityPluginBinding = activityPluginBinding;
+        delegate?.let { activityPluginBinding.addActivityResultListener(it) }; }
+
+    private fun setupEngine(messenger: BinaryMessenger) {
+        val channel = MethodChannel(messenger, CHANNEL)
+        channel.setMethodCallHandler(this)
+//        channel = MethodChannel(plugin.flutterEngine.dartExecutor, "videotrimming")
+//        channel.setMethodCallHandler(this);
+
+    }
 
     override fun onDetachedFromActivityForConfigChanges() {
-        TODO("Not yet implemented")
+        onDetachedFromActivity();
     }
 }

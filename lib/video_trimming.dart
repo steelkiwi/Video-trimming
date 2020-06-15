@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-class Videotrimming {
-  static const MethodChannel _channel = const MethodChannel('videotrimming');
+class VideoTrimming {
+  static const MethodChannel _channel = const MethodChannel('plugins.steelkiwi.com/trimmer_video');
   static const KEY_NATIVE = "trim_video";
 
   static Future<String> get platformVersion async {
