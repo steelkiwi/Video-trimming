@@ -20,12 +20,13 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
 
 
     companion object {
-            private const val REQUEST_VIDEO_TRIMMER = 1
+        const val REQUEST_VIDEO_TRIMMER = 1
         private const val REQUEST_STORAGE_READ_ACCESS_PERMISSION = 2
         internal const val EXTRA_INPUT_URI = "EXTRA_INPUT_URI"
         private val allowedVideoFileExtensions = arrayOf("mkv", "mp4", "3gp", "mov", "mts")
         private val videosMimeTypes = ArrayList<String>(allowedVideoFileExtensions.size)
     }
+
     @RequiresApi(Build.VERSION_CODES.FROYO)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +37,6 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
             return
         }
         //setting progressbar
-//        progressDialog = ProgressDialog(this)
-//        progressDialog!!.setCancelable(false)
-//        progressDialog!!.setMessage(getString(R.string.trimming_progress))
         videoTrimmerView.setMaxDurationInMs(15 * 1000)
 
         videoTrimmerView.setOnK4LVideoListener(this)
@@ -61,7 +59,7 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
         if (uri == null) {
             Toast.makeText(this@TrimmerActivity, "failed trimming", Toast.LENGTH_SHORT).show()
         } else {
-            val msg = "saved "+ uri.path;
+            val msg = "saved " + uri.path;
             Toast.makeText(this@TrimmerActivity, msg, Toast.LENGTH_SHORT).show()
             val intent = Intent()
             intent.putExtra("trim_video", uri.path)

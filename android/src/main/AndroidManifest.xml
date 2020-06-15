@@ -4,6 +4,10 @@
 
     <application android:theme="@style/AppTheme">
         <activity android:name=".TestActivity"></activity>
+
+        <activity
+            android:name=".trim.TrimmerActivity"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>
