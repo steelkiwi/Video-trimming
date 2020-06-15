@@ -1,12 +1,7 @@
 package com.steelkiwi.videotrimming
 
 import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import androidx.annotation.NonNull
-import com.steelkiwi.videotrimming.trim.TrimmerActivity
-import com.steelkiwi.videotrimming.trim.TrimmerActivity.Companion.EXTRA_INPUT_URI
-import com.steelkiwi.videotrimming.trim.TrimmerActivity.Companion.REQUEST_VIDEO_TRIMMER
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -16,7 +11,6 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
-import java.io.File
 
 
 public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -52,14 +46,6 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
             delegate?.startTrim(call, result);
         }
     }
-
-    //
-    private fun startTrimActivity(uri: Uri) {
-        val intent = Intent(activityPluginBinding!!.activity, TrimmerActivity::class.java)
-        intent.putExtra(EXTRA_INPUT_URI, uri)
-        activityPluginBinding?.activity?.startActivityForResult(intent, REQUEST_VIDEO_TRIMMER)
-    }
-
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         channel?.setMethodCallHandler(null)
     }
@@ -86,9 +72,6 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
     private fun setupEngine(messenger: BinaryMessenger) {
         val channel = MethodChannel(messenger, CHANNEL)
         channel.setMethodCallHandler(this)
-//        channel = MethodChannel(plugin.flutterEngine.dartExecutor, "videotrimming")
-//        channel.setMethodCallHandler(this);
-
     }
 
     override fun onDetachedFromActivityForConfigChanges() {

@@ -32,6 +32,11 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trimmer)
+        var  videoTrimingView=findViewById<VideoTrimmerView>(R.id.videoTrimmerView);
+        videoTrimingView.onCancelListener={
+            setResult(Activity.RESULT_CANCELED, intent)
+            finish()
+        };
         val inputVideoUri: String? = intent?.getStringExtra(EXTRA_INPUT_URI)
         val maxSeconds: Int? = intent?.getIntExtra(EXTRA_INPUT_MAX_SECONDS, 15) ?: 15;
         if (inputVideoUri == null) {

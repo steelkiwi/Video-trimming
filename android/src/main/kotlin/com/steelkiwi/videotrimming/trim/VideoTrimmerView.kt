@@ -13,7 +13,10 @@ import com.steelkiwi.videotrimming.R
 import kotlinx.android.synthetic.main.video_trimmer.view.*
 
 
-class VideoTrimmerView @JvmOverloads  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BaseVideoTrimmerView(context, attrs, defStyleAttr) {
+class VideoTrimmerView @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BaseVideoTrimmerView(context, attrs, defStyleAttr) {
+    var onCancelListener: () -> Unit = fun() {}
+
+
     private fun stringForTime(timeMs: Int): String {
         val totalSeconds = timeMs / 1000
         val seconds = totalSeconds % 60
@@ -29,6 +32,7 @@ class VideoTrimmerView @JvmOverloads  constructor(context: Context, attrs: Attri
     override fun initRootView() {
         LayoutInflater.from(context).inflate(R.layout.video_trimmer, this, true)
         fab.setOnClickListener { initiateTrimming() }
+        cancel.setOnClickListener { onCancelListener() }
     }
 
     override fun getTimeLineView(): TimeLineView = timeLineView
