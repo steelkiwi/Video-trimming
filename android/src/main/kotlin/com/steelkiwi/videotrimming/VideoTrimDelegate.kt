@@ -13,8 +13,6 @@ import java.io.File
 class VideoTrimDelegate(private var activity: Activity) : PluginRegistry.ActivityResultListener {
     private var pendingResult: MethodChannel.Result? = null
     private val fileUtils: FileUtils = FileUtils()
-
-
     fun startTrim(call: MethodCall, result: MethodChannel.Result?) {
         val sourcePath = call.argument<String>("source_path")
         val maxSeconds = call.argument<Int>("max_seconds")

@@ -32,7 +32,7 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trimmer)
-        val inputVideoUri: Uri? = intent?.getParcelableExtra(EXTRA_INPUT_URI)
+        val inputVideoUri: String? = intent?.getStringExtra(EXTRA_INPUT_URI)
         val maxSeconds: Int? = intent?.getIntExtra(EXTRA_INPUT_MAX_SECONDS, 15) ?: 15;
         if (inputVideoUri == null) {
             finish()
@@ -49,7 +49,7 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
         val fileName = "trimmedVideo_${System.currentTimeMillis()}.mp4"
         val trimmedVideoFile = File(parentFolder, fileName)
         videoTrimmerView.setDestinationFile(trimmedVideoFile)
-        videoTrimmerView.setVideoURI(inputVideoUri)
+        videoTrimmerView.setVideoURI(Uri.fromFile(File(inputVideoUri)))
 
         videoTrimmerView.setVideoInformationVisibility(true)
     }

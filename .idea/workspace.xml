@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideoTrimDelegate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideoTrimDelegate.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/TrimmerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/TrimmerActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/video_trimming.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/video_trimming.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,28 +75,28 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592231424902" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592253906882">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592255766705">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592253906882" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592255766705" />
     <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592249295041" />
     <state width="1398" height="216" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1592229576110" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1592253906879">
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1592255766703">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592253906879" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592255766703" />
     <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1592249295040" />
     <state width="1398" height="216" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1592229576109" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1592253906878">
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1592255766702">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592253906878" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592255766702" />
     <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1592249295039" />
     <state width="1398" height="216" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1592229576107" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1592253906880">
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1592255766705">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592253906880" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592255766705" />
     <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592249295040" />
     <state width="1398" height="216" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1592229576109" />
     <state x="208" y="31" key="SettingsEditor" timestamp="1592233949673">
@@ -120,5 +119,41 @@
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592231379150" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592235746250" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
+          <line>82</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
+          <line>84</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
+          <line>85</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/video_trimming.dart</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/video_trimming.dart</url>
+          <line>24</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/video_trimming.dart</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

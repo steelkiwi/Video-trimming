@@ -20,7 +20,7 @@ import java.io.File
 
 
 public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
-    private lateinit var channel: MethodChannel
+    private  var channel: MethodChannel?=null
     private var activityPluginBinding: ActivityPluginBinding? = null
 
     private var delegate: VideoTrimDelegate? = null
@@ -61,7 +61,7 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
     }
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
-        channel.setMethodCallHandler(null)
+        channel?.setMethodCallHandler(null)
     }
 
     override fun onDetachedFromActivity() {
