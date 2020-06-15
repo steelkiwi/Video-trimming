@@ -1,6 +1,7 @@
-package com.steelkiwi.videotrimming.trim
+package com.lb.video_trimmer_sample
 
 import android.content.Context
+import android.text.format.Formatter
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +9,9 @@ import android.widget.VideoView
 import com.lb.video_trimmer_library.BaseVideoTrimmerView
 import com.lb.video_trimmer_library.view.RangeSeekBarView
 import com.lb.video_trimmer_library.view.TimeLineView
-
-import com.steelkiwi.videotrimming.R
 import kotlinx.android.synthetic.main.video_trimmer.view.*
 
-
-class VideoTrimmerView @JvmOverloads  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BaseVideoTrimmerView(context, attrs, defStyleAttr) {
+class VideoTrimmerView @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) : BaseVideoTrimmerView(context, attrs, defStyleAttr) {
     private fun stringForTime(timeMs: Int): String {
         val totalSeconds = timeMs / 1000
         val seconds = totalSeconds % 60
@@ -44,16 +42,16 @@ class VideoTrimmerView @JvmOverloads  constructor(context: Context, attrs: Attri
     override fun getRangeSeekBarView(): RangeSeekBarView = rangeSeekBarView
 
     override fun onRangeUpdated(startTimeInMs: Int, endTimeInMs: Int) {
-        val seconds = "s"
+        val seconds = context.getString(R.string.short_seconds)
         trimTimeRangeTextView.text = "${stringForTime(startTimeInMs)} $seconds - ${stringForTime(endTimeInMs)} $seconds"
     }
 
     override fun onVideoPlaybackReachingTime(timeInMs: Int) {
-        val seconds = "s"
+        val seconds = context.getString(R.string.short_seconds)
         playbackTimeTextView.text = "${stringForTime(timeInMs)} $seconds"
     }
 
     override fun onGotVideoFileSize(videoFileSize: Long) {
-        //videoFileSizeTextView.text = Formatter.formatShortFileSize(context, videoFileSize)
+        videoFileSizeTextView.text = Formatter.formatShortFileSize(context, videoFileSize)
     }
 }

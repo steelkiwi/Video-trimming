@@ -5,23 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2f1ac3-9fdd-4bf2-bff0-1a951c3728b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/steelkiwi/videotrimming/TestActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/ThirdPartyIntentsUtil.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/TrimmerActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/VideoTrimmerView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/res/layout/activity_test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/VideotrimmingPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/ThirdPartyIntentsUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/ThirdPartyIntentsUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/TrimmerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/TrimmerActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/VideoTrimmerView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/steelkiwi/videotrimming/trim/VideoTrimmerView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/res/layout/activity_trimmer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/layout/activity_trimmer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/res/layout/video_trimmer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/layout/video_trimmer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/BaseVideoTrimmerView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/interfaces/OnProgressVideoListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/interfaces/OnRangeSeekBarListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/interfaces/VideoTrimmingListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/utils/BackgroundExecutor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/utils/FileUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/utils/TrimVideoUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/utils/UiThreadExecutor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/view/RangeSeekBarView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/video_trimmer_library/src/main/java/com/lb/video_trimmer_library/view/TimeLineView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_25" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -76,28 +95,28 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="483" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592231424902" />
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592233996852">
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592235505010">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592233996852" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592235505010" />
     <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592231126379" />
     <state width="1398" height="216" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1592229576110" />
-    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1592233996850">
+    <state width="1398" height="244" key="GridCell.Tab.0.center" timestamp="1592235505008">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592233996850" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592235505008" />
     <state width="1398" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1592231126378" />
     <state width="1398" height="216" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1592229576109" />
-    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1592233996849">
+    <state width="1398" height="244" key="GridCell.Tab.0.left" timestamp="1592235505007">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592233996849" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592235505007" />
     <state width="1398" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1592231126377" />
     <state width="1398" height="216" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1592229576107" />
-    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1592233996851">
+    <state width="1398" height="244" key="GridCell.Tab.0.right" timestamp="1592235505009">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592233996851" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592235505009" />
     <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592231126378" />
     <state width="1398" height="216" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1592229576109" />
     <state x="208" y="31" key="SettingsEditor" timestamp="1592233949673">
@@ -115,9 +134,10 @@
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592228716806" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592225566599" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836@0.23.1440.836" timestamp="1592229709905" />
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1592231379150">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1592235746250">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592231379150" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592235746250" />
   </component>
 </project>

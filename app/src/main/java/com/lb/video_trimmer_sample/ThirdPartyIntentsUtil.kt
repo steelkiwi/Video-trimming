@@ -1,4 +1,4 @@
-package com.steelkiwi.videotrimming.trim
+package com.lb.video_trimmer_sample
 
 import android.annotation.TargetApi
 import android.content.ComponentName
@@ -11,7 +11,6 @@ import android.os.Build
 import android.os.Parcelable
 import android.provider.MediaStore
 import android.webkit.MimeTypeMap
-import androidx.annotation.RequiresApi
 import java.util.*
 
 object ThirdPartyIntentsUtil {
@@ -20,21 +19,20 @@ object ThirdPartyIntentsUtil {
     //example usage: mainType= "image/*"  extraMimeTypes= arrayOf("image/jpeg", "image/png") - choose all images of png and jpeg types
     /**note that this only requests to choose the files, but it's not guaranteed that this is what you will get*/
     @JvmStatic
-    fun getPickFileIntent(context: Context, mainType: String = "*/*", extraMimeTypes: Array<String> = arrayOf()): Intent? {
+    fun getPickFileIntent(context: Context, mainType: String = "*/*", extraMimeTypes: Array<String>? = null): Intent? {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
             return null
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         intent.type = mainType
-        if (extraMimeTypes.isNotEmpty())
+        if (!extraMimeTypes.isNullOrEmpty())
             intent.putExtra(Intent.EXTRA_MIME_TYPES, extraMimeTypes)
-        if (context.packageManager.queryIntentActivities(intent, 0).isEmpty())
+        if (context.packageManager.queryIntentActivities(intent, 0).isNullOrEmpty())
             return null
         return intent
     }
 
     //    https://github.com/linchaolong/ImagePicker/blob/master/library/src/main/java/com/linchaolong/android/imagepicker/cropper/CropImage.java
-    @RequiresApi(Build.VERSION_CODES.DONUT)
     @JvmStatic
     fun getPickFileChooserIntent(
             context: Context, title: CharSequence?, preferDocuments: Boolean = true, includeCameraIntents: Boolean, mainType: String
@@ -81,7 +79,6 @@ object ThirdPartyIntentsUtil {
         return chooserIntent
     }
 
-    @RequiresApi(Build.VERSION_CODES.DONUT)
     private fun getCameraIntents(packageManager: PackageManager): ArrayList<Intent> {
         val cameraIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)
         val listCamera = packageManager.queryIntentActivities(cameraIntent, 0)
@@ -109,7 +106,7 @@ object ThirdPartyIntentsUtil {
         else
             Intent(action, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         galleryIntent.type = mainType
-        if (!extraMimeTypes!!.isEmpty()) {
+        if (!extraMimeTypes.isNullOrEmpty()) {
             galleryIntent.addCategory(Intent.CATEGORY_OPENABLE)
             galleryIntent.putExtra(Intent.EXTRA_MIME_TYPES, extraMimeTypes)
         }

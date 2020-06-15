@@ -75,15 +75,15 @@
         app:layout_constraintBottom_toTopOf="@id/trimmingContainer"
         tools:visibility="visible">
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/videoFileSizeTextView"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_gravity="end"-->
-        <!--            android:textColor="#fff"-->
-        <!--            android:textSize="12sp"-->
-        <!--            tools:ignore="RtlCompat"-->
-        <!--            tools:text="33 MB" />-->
+                <TextView
+                    android:id="@+id/videoFileSizeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat"
+                    tools:text="33 MB" />
 
         <TextView
             android:id="@+id/trimTimeRangeTextView"

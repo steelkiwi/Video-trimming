@@ -1,36 +1,22 @@
-package com.steelkiwi.videotrimming.trim
+package com.lb.video_trimmer_sample
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.lb.video_trimmer_library.interfaces.VideoTrimmingListener
-import com.steelkiwi.videotrimming.R
-import io.flutter.app.FlutterActivity
 import kotlinx.android.synthetic.main.activity_trimmer.*
 import java.io.File
-import java.util.*
 
-class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
+class TrimmerActivity : AppCompatActivity(), VideoTrimmingListener {
 //    private var progressDialog: ProgressDialog? = null
 
-
-    companion object {
-            private const val REQUEST_VIDEO_TRIMMER = 1
-        private const val REQUEST_STORAGE_READ_ACCESS_PERMISSION = 2
-        internal const val EXTRA_INPUT_URI = "EXTRA_INPUT_URI"
-        private val allowedVideoFileExtensions = arrayOf("mkv", "mp4", "3gp", "mov", "mts")
-        private val videosMimeTypes = ArrayList<String>(allowedVideoFileExtensions.size)
-    }
-    @RequiresApi(Build.VERSION_CODES.FROYO)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trimmer)
-        val inputVideoUri: Uri? = intent?.getParcelableExtra(EXTRA_INPUT_URI)
+        val inputVideoUri: Uri? = intent?.getParcelableExtra(MainActivity.EXTRA_INPUT_URI)
         if (inputVideoUri == null) {
             finish()
             return
@@ -39,8 +25,7 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
 //        progressDialog = ProgressDialog(this)
 //        progressDialog!!.setCancelable(false)
 //        progressDialog!!.setMessage(getString(R.string.trimming_progress))
-        videoTrimmerView.setMaxDurationInMs(15 * 1000)
-
+        videoTrimmerView.setMaxDurationInMs(10 * 1000)
         videoTrimmerView.setOnK4LVideoListener(this)
         val parentFolder = getExternalFilesDir(null)!!
         parentFolder.mkdirs()
@@ -48,7 +33,6 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
         val trimmedVideoFile = File(parentFolder, fileName)
         videoTrimmerView.setDestinationFile(trimmedVideoFile)
         videoTrimmerView.setVideoURI(inputVideoUri)
-
         videoTrimmerView.setVideoInformationVisibility(true)
     }
 
@@ -61,17 +45,13 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
         if (uri == null) {
             Toast.makeText(this@TrimmerActivity, "failed trimming", Toast.LENGTH_SHORT).show()
         } else {
-            val msg = "saved "+ uri.path;
+            val msg = getString(R.string.video_saved_at, uri.path)
             Toast.makeText(this@TrimmerActivity, msg, Toast.LENGTH_SHORT).show()
-            val intent = Intent()
-            intent.putExtra("trim_video", uri.path)
-            setResult(Activity.RESULT_OK, intent)
-            finish()
-//            val intent = Intent(Intent.ACTION_VIEW, uri)
-//            intent.setDataAndType(uri, "video/mp4")
-//            startActivity(intent)
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            intent.setDataAndType(uri, "video/mp4")
+            startActivity(intent)
         }
-        //finish()
+        finish()
     }
 
     override fun onErrorWhileViewingVideo(what: Int, extra: Int) {
