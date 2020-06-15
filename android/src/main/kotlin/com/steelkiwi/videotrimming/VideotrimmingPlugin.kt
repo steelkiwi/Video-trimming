@@ -43,17 +43,13 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
             channel.setMethodCallHandler(VideotrimmingPlugin())
 
 
-
         }
     }
 
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         if (call.method == ACTION_CHANEL_TRIM_VIDEO) {
-            val sourcePath = call.argument<String>("source_path")
-            startTrimActivity(Uri.fromFile(File(sourcePath)));
-        } else {
-            result.notImplemented()
+            delegate?.startTrim(call, result);
         }
     }
 

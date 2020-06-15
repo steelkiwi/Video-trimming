@@ -17,26 +17,22 @@ class VideoTrimDelegate(private var activity: Activity) : PluginRegistry.Activit
 
     fun startTrim(call: MethodCall, result: MethodChannel.Result?) {
         val sourcePath = call.argument<String>("source_path")
-        val maxWidth = call.argument<Int>("max_seconds")
-
+        val maxSeconds = call.argument<Int>("max_seconds")
         pendingResult = result
-
         val intent = Intent(activity, TrimmerActivity::class.java)
         intent.putExtra(TrimmerActivity.EXTRA_INPUT_URI, sourcePath)
-        activity?.startActivityForResult(intent, TrimmerActivity.REQUEST_VIDEO_TRIMMER)
+        intent.putExtra(TrimmerActivity.EXTRA_INPUT_MAX_SECONDS, maxSeconds)
+        activity.startActivityForResult(intent, TrimmerActivity.REQUEST_VIDEO_TRIMMER)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == TrimmerActivity.REQUEST_VIDEO_TRIMMER) {
-                var data = data?.getStringExtra("trim_video");
-                //result?.success(data)
-
+                var data = data?.getStringExtra(TrimmerActivity.EXTRA_OUTPUT_FILE);
                 if (data != null) {
                     finishWithSuccess(data)
                 } else {
-//                    val cropError: Throwable = UCrop.getError(data)
-                    // finishWithError("crop_error", cropError.localizedMessage, cropError)
+                    finishWithError("crop_error", "Output path null", Throwable(message = "Output path null"))
                 }
 
                 return true

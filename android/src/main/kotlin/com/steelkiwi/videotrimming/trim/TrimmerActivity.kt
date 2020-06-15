@@ -21,10 +21,11 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
 
     companion object {
         const val REQUEST_VIDEO_TRIMMER = 1
-        private const val REQUEST_STORAGE_READ_ACCESS_PERMISSION = 2
         internal const val EXTRA_INPUT_URI = "EXTRA_INPUT_URI"
-        private val allowedVideoFileExtensions = arrayOf("mkv", "mp4", "3gp", "mov", "mts")
-        private val videosMimeTypes = ArrayList<String>(allowedVideoFileExtensions.size)
+        internal const val EXTRA_INPUT_MAX_SECONDS = "EXTRA_INPUT_MAX_SECONDS"
+        internal const val EXTRA_OUTPUT_FILE = "EXTRA_OUTPUT_FILE"
+//        private val allowedVideoFileExtensions = arrayOf("mkv", "mp4", "3gp", "mov", "mts")
+//        private val videosMimeTypes = ArrayList<String>(allowedVideoFileExtensions.size)
     }
 
     @RequiresApi(Build.VERSION_CODES.FROYO)
@@ -32,12 +33,15 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trimmer)
         val inputVideoUri: Uri? = intent?.getParcelableExtra(EXTRA_INPUT_URI)
+        val maxSeconds: Int? = intent?.getIntExtra(EXTRA_INPUT_MAX_SECONDS, 15) ?: 15;
         if (inputVideoUri == null) {
             finish()
             return
         }
         //setting progressbar
-        videoTrimmerView.setMaxDurationInMs(15 * 1000)
+        if (maxSeconds != null) {
+            videoTrimmerView.setMaxDurationInMs(maxSeconds * 1000)
+        }
 
         videoTrimmerView.setOnK4LVideoListener(this)
         val parentFolder = getExternalFilesDir(null)!!
@@ -62,7 +66,7 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
             val msg = "saved " + uri.path;
             Toast.makeText(this@TrimmerActivity, msg, Toast.LENGTH_SHORT).show()
             val intent = Intent()
-            intent.putExtra("trim_video", uri.path)
+            intent.putExtra(EXTRA_OUTPUT_FILE, uri.path)
             setResult(Activity.RESULT_OK, intent)
             finish()
 //            val intent = Intent(Intent.ACTION_VIEW, uri)
