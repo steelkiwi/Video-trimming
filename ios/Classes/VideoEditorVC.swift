@@ -1,6 +1,6 @@
 //
 //  VideoEditorVC.swift
-//  DKImagePickerController
+//  videotrimming
 //
 //  Created by Igor on 6/16/20.
 //
