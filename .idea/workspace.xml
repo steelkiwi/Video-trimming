@@ -21,6 +21,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/android/src/main" />
@@ -49,6 +50,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="60" y="23" width="733" height="787" key="CommitChangelistDialog2" timestamp="1592311904732">
+      <screen x="60" y="23" width="1380" height="787" />
+    </state>
+    <state x="60" y="23" width="733" height="787" key="CommitChangelistDialog2/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311904732" />
     <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592229827949">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -80,9 +85,9 @@
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592228716806" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592225566599" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836@0.23.1440.836" timestamp="1592229709905" />
-    <state x="434" y="215" key="git4idea.merge.GitPullDialog" timestamp="1592311824763">
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog" timestamp="1592311850267">
       <screen x="60" y="23" width="1380" height="787" />
     </state>
-    <state x="434" y="215" key="git4idea.merge.GitPullDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311824763" />
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311850267" />
   </component>
 </project>
