@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       File file = await FilePicker.getFile(type: FileType.video);
 
       print("Selected video");
-      var fileNew = await Videotrimming.trimVideo(sourcePath: file.path);
+      var fileNew = await VideoTrimming.trimVideo(sourcePath: file.path);
 
       _controller = VideoPlayerController.file(fileNew);
 
