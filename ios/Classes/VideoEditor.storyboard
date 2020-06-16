@@ -21,12 +21,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6N-2J-d9H">
-                                <rect key="frame" x="0.0" y="734" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="704.5" width="414" height="157.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRG-nb-jlE">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-F6-At8">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-F6-At8">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -50,8 +50,31 @@
                                             <constraint firstItem="ZiQ-1l-owB" firstAttribute="centerX" secondItem="vRG-nb-jlE" secondAttribute="centerX" id="pu6-fz-niw"/>
                                         </constraints>
                                     </view>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-Y9-Uaw">
+                                        <rect key="frame" x="290.5" y="64" width="91.5" height="21.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbY-NJ-DG0">
+                                                <rect key="frame" x="0.0" y="0.0" width="37.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE2-1M-Elv">
+                                                <rect key="frame" x="41.5" y="0.0" width="8.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-6K-ioR">
+                                                <rect key="frame" x="54" y="0.0" width="37.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5r-NX-s6S" customClass="TrimmerView" customModule="PryntTrimmerView">
-                                        <rect key="frame" x="64" y="64" width="286" height="56"/>
+                                        <rect key="frame" x="32" y="93.5" width="350" height="56"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="qug-ag-LT2"/>
@@ -68,13 +91,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="A5r-NX-s6S" secondAttribute="trailing" constant="64" id="4YZ-Cm-bZQ"/>
-                                    <constraint firstItem="A5r-NX-s6S" firstAttribute="top" secondItem="vRG-nb-jlE" secondAttribute="bottom" constant="8" id="5Jz-av-pmS"/>
+                                    <constraint firstAttribute="trailing" secondItem="A5r-NX-s6S" secondAttribute="trailing" constant="32" id="4YZ-Cm-bZQ"/>
                                     <constraint firstAttribute="bottom" secondItem="A5r-NX-s6S" secondAttribute="bottom" constant="8" id="Ci7-gG-Zpw"/>
                                     <constraint firstItem="vRG-nb-jlE" firstAttribute="leading" secondItem="M6N-2J-d9H" secondAttribute="leading" id="GL0-ND-Ihu"/>
                                     <constraint firstAttribute="trailing" secondItem="vRG-nb-jlE" secondAttribute="trailing" id="T6E-EM-HPb"/>
-                                    <constraint firstItem="A5r-NX-s6S" firstAttribute="leading" secondItem="M6N-2J-d9H" secondAttribute="leading" constant="64" id="ZHW-FM-g0s"/>
+                                    <constraint firstItem="A5r-NX-s6S" firstAttribute="leading" secondItem="M6N-2J-d9H" secondAttribute="leading" constant="32" id="ZHW-FM-g0s"/>
+                                    <constraint firstItem="A5r-NX-s6S" firstAttribute="top" secondItem="XC9-Y9-Uaw" secondAttribute="bottom" constant="8" id="ciH-x6-puH"/>
                                     <constraint firstItem="vRG-nb-jlE" firstAttribute="top" secondItem="M6N-2J-d9H" secondAttribute="top" id="lK3-fw-sz1"/>
+                                    <constraint firstItem="XC9-Y9-Uaw" firstAttribute="top" secondItem="vRG-nb-jlE" secondAttribute="bottom" constant="8" id="trs-LV-H3g"/>
+                                    <constraint firstItem="XC9-Y9-Uaw" firstAttribute="trailing" secondItem="A5r-NX-s6S" secondAttribute="trailing" id="xNj-k9-fYP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -92,8 +117,11 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="ZiQ-1l-owB" id="8bx-RZ-XsG"/>
+                        <outlet property="endTrimTimeLabel" destination="dF0-6K-ioR" id="4JY-ZX-1xk"/>
                         <outlet property="playerView" destination="Udo-OM-5F2" id="jau-Vj-WGD"/>
                         <outlet property="saveButton" destination="hK5-F6-At8" id="vjZ-o9-yhb"/>
+                        <outlet property="startTrimTimeLabel" destination="hbY-NJ-DG0" id="mxh-5W-hmB"/>
+                        <outlet property="trimTimeLabelsView" destination="XC9-Y9-Uaw" id="ah9-uk-g5Q"/>
                         <outlet property="trimmerView" destination="A5r-NX-s6S" id="igQ-Zg-fTJ"/>
                     </connections>
                 </viewController>

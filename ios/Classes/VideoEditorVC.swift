@@ -13,6 +13,9 @@ import Photos
 class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     
     @IBOutlet private weak var playerView: UIView!
+    @IBOutlet private weak var trimTimeLabelsView: UIStackView!
+    @IBOutlet private weak var startTrimTimeLabel: UILabel!
+    @IBOutlet private weak var endTrimTimeLabel: UILabel!
     @IBOutlet private weak var trimmerView: TrimmerView!
     @IBOutlet private weak var saveButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -44,12 +47,18 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     
     private func loadAsset() {
         guard player == nil else { return }
-        let asset = AVAsset(url: sourceVideoURL)
-        self.trimmerView.asset = asset
-        self.trimmerView.delegate = self
-        trimmerView.minDuration = minDurationSeconds
-        trimmerView.maxDuration = maxDurationSeconds
-        self.addVideoPlayer(with: asset, playerView: self.playerView)
+        DispatchQueue.global().async {
+            let asset = AVAsset(url: self.sourceVideoURL)
+            DispatchQueue.main.async {
+                self.trimmerView.asset = asset
+                self.trimmerView.delegate = self
+                self.trimmerView.minDuration = self.minDurationSeconds
+                self.trimmerView.maxDuration = self.maxDurationSeconds
+                self.updateTrimTimeLabelsUI()
+                self.addVideoPlayer(with: asset, playerView: self.playerView)
+                self.saveButton.isEnabled = true
+            }
+        }
     }
     
     private func addVideoPlayer(with asset: AVAsset, playerView: UIView) {
@@ -102,11 +111,11 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
                                     end: endTime)
         
         exportSession.timeRange = timeRange
-        saveButton.isEnabled = false
+        saveButton.isHidden = true
         activityIndicator.startAnimating()
         exportSession.exportAsynchronously {
             DispatchQueue.main.async {
-                self.saveButton.isEnabled = true
+                self.saveButton.isHidden = false
                 self.activityIndicator.stopAnimating()
                 switch exportSession.status {
                 case .completed:
@@ -120,6 +129,12 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         }
     }
     
+    private func updateTrimTimeLabelsUI() {
+        trimTimeLabelsView.isHidden = false
+        startTrimTimeLabel.text = trimmerView.startTime?.formatted
+        endTrimTimeLabel.text = trimmerView.endTime?.formatted
+    }
+    
     @IBAction private func saveTapped(_ sender: Any) {
         trimVideo()
     }
@@ -129,9 +144,26 @@ extension VideoEditorVC: TrimmerViewDelegate {
     
     func didChangePositionBar(_ playerTime: CMTime) {
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+        updateTrimTimeLabelsUI()
     }
     
     func positionBarStoppedMoving(_ playerTime: CMTime) {
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+    }
+}
+
+extension CMTime {
+    
+    var formatted: String {
+        let totalSeconds = Int(CMTimeGetSeconds(self))
+        let hours = totalSeconds / 3600
+        let minutes = totalSeconds % 3600 / 60
+        let seconds = (totalSeconds % 3600) % 60
+
+        if hours > 0 {
+            return String(format: "%i:%02i:%02i", hours, minutes, seconds)
+        } else {
+            return String(format: "%02i:%02i", minutes, seconds)
+        }
     }
 }
