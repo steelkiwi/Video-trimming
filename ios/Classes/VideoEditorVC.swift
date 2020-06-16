@@ -20,8 +20,10 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     static var storyboardName: StoryboardName { .videoEditor }
     
     private var player: AVPlayer?
+    
     private var sourceVideoURL: URL!
-    private var maxDurationSeconds: Int!
+    private var minDurationSeconds: Double!
+    private var maxDurationSeconds: Double!
     private var completion: ((String) -> ())?
     
     override var prefersStatusBarHidden: Bool { true }
@@ -31,9 +33,10 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         loadAsset()
     }
     
-    static func instantiateVC(sourceVideoURL: URL, maxDurationSeconds: Int, completion: @escaping (String) -> ()) -> VideoEditorVC {
+    static func instantiateVC(sourceVideoURL: URL, minDurationSeconds: Double, maxDurationSeconds: Double, completion: @escaping (String) -> ()) -> VideoEditorVC {
         let vc = VideoEditorVC.instantiateVC()
         vc.sourceVideoURL = sourceVideoURL
+        vc.minDurationSeconds = minDurationSeconds
         vc.maxDurationSeconds = maxDurationSeconds
         vc.completion = completion
         return vc
@@ -44,7 +47,8 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         let asset = AVAsset(url: sourceVideoURL)
         self.trimmerView.asset = asset
         self.trimmerView.delegate = self
-        trimmerView.maxDuration = Double(maxDurationSeconds)
+        trimmerView.minDuration = minDurationSeconds
+        trimmerView.maxDuration = maxDurationSeconds
         self.addVideoPlayer(with: asset, playerView: self.playerView)
     }
     

@@ -16,13 +16,17 @@ public class SwiftVideotrimmingPlugin: NSObject, FlutterPlugin {
         }
         guard let arguments = call.arguments as? [String: Any],
             let sourcePath = arguments["source_path"] as? String,
-            let maxDurationSeconds = arguments["max_seconds"] as? Int else {
+            let minDurationSeconds = arguments["min_seconds"] as? Double,
+            let maxDurationSeconds = arguments["max_seconds"] as? Double else {
                 result(FlutterError(code: "SOURCE_PATH_MISSING", message: "Missing arguments", details: nil))
                 return
         }
         let sourcePathURL = URL(fileURLWithPath: sourcePath)
-        let vc = VideoEditorVC.instantiateVC(sourceVideoURL: sourcePathURL, maxDurationSeconds: maxDurationSeconds, completion: { outputVideoPath in
-            result(outputVideoPath)
+        let vc = VideoEditorVC.instantiateVC(sourceVideoURL: sourcePathURL,
+                                             minDurationSeconds: minDurationSeconds,
+                                             maxDurationSeconds: maxDurationSeconds,
+                                             completion: { outputVideoPath in
+                                                result(outputVideoPath)
         })
         vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
