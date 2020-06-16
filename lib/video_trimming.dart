@@ -11,13 +11,15 @@ class VideoTrimming {
 
   static Future<File> trimVideo({
     @required String sourcePath,
-    int maxSeconds = 15,
+    double minSeconds = 1,
+    double maxSeconds = 15,
   }) async {
     assert(sourcePath != null);
     assert(await File(sourcePath).exists());
 
     final arguments = <String, dynamic>{
       'source_path': sourcePath,
+      'min_seconds': minSeconds,
       'max_seconds': maxSeconds,
     };
     final String resultPath =
