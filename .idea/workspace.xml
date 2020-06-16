@@ -11,6 +11,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_25" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1dM98hipOevJTuyF0QT8MpQzRvs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -77,5 +80,9 @@
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592228716806" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592225566599" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836@0.23.1440.836" timestamp="1592229709905" />
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog" timestamp="1592311824763">
+      <screen x="60" y="23" width="1380" height="787" />
+    </state>
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311824763" />
   </component>
 </project>
