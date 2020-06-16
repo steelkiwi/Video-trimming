@@ -28,7 +28,6 @@ public class SwiftVideotrimmingPlugin: NSObject, FlutterPlugin {
                                              completion: { outputVideoPath in
                                                 result(outputVideoPath)
         })
-        vc.modalPresentationStyle = .fullScreen
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
     }
 }
