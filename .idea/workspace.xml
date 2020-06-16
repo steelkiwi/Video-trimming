@@ -4,12 +4,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2f1ac3-9fdd-4bf2-bff0-1a951c3728b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="ea2f1ac3-9fdd-4bf2-bff0-1a951c3728b7" name="Default Changelist" comment="Add .ideo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftVideotrimmingPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftVideotrimmingPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/VideoEditorVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/VideoEditorVC.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/videotrimming/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/videotrimming/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,29 +14,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_COMMON_BRANCH" value="master" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1dM98hipOevJTuyF0QT8MpQzRvs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/src/main" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -62,30 +52,32 @@
       <option name="presentableId" value="Default" />
       <updated>1592223937867</updated>
     </task>
+    <task id="LOCAL-00001" summary="Workspace changes">
+      <created>1592311845979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592311845979</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Workspace changes">
+      <created>1592311931114</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592311931114</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Workspace changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="54" y="23" width="733" height="787" key="CommitChangelistDialog2" timestamp="1592311359044">
-      <screen x="54" y="23" width="1386" height="787" />
+    <state x="60" y="23" width="733" height="787" key="CommitChangelistDialog2" timestamp="1592311971849">
+      <screen x="60" y="23" width="1380" height="787" />
     </state>
-    <state x="54" y="23" width="733" height="787" key="CommitChangelistDialog2/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592311359044" />
-    <state x="193" y="91" key="DiffContextDialog" timestamp="1592309101676">
-      <screen x="54" y="23" width="1386" height="787" />
-    </state>
-    <state x="193" y="91" key="DiffContextDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592309101676" />
+    <state x="60" y="23" width="733" height="787" key="CommitChangelistDialog2/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311971849" />
     <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592229827949">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -110,6 +102,10 @@
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/-239.-1080.1920.1080@0.0.1440.900" timestamp="1592226164074" />
     <state width="1398" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592229827948" />
     <state width="1398" height="216" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1592229576109" />
+    <state x="463" y="139" key="MultipleFileMergeDialog" timestamp="1592311993544">
+      <screen x="60" y="23" width="1380" height="787" />
+    </state>
+    <state x="463" y="139" key="MultipleFileMergeDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311993544" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1592229709905">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
@@ -117,13 +113,17 @@
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592228716806" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592225566599" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836@0.23.1440.836" timestamp="1592229709905" />
-    <state x="426" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1592311135639">
-      <screen x="54" y="23" width="1386" height="787" />
+    <state x="429" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1592312043013">
+      <screen x="60" y="23" width="1380" height="787" />
     </state>
-    <state x="426" y="249" key="com.intellij.ide.util.TipDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592311135639" />
-    <state x="493" y="136" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592309102769">
-      <screen x="54" y="23" width="1386" height="787" />
+    <state x="429" y="249" key="com.intellij.ide.util.TipDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592312043013" />
+    <state x="496" y="136" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592311989957">
+      <screen x="60" y="23" width="1380" height="787" />
     </state>
-    <state x="493" y="136" key="git4idea.branch.GitSmartOperationDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592309102769" />
+    <state x="496" y="136" key="git4idea.branch.GitSmartOperationDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311989957" />
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog" timestamp="1592311937257">
+      <screen x="60" y="23" width="1380" height="787" />
+    </state>
+    <state x="434" y="215" key="git4idea.merge.GitPullDialog/60.23.1380.787/-247.-1080.1920.1080@60.23.1380.787" timestamp="1592311937257" />
   </component>
 </project>
