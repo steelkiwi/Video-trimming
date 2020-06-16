@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2f1ac3-9fdd-4bf2-bff0-1a951c3728b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/Classes/VideoEditorPlatformViewFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videotrimming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/videotrimming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftVideotrimmingPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftVideotrimmingPlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/VideoEditorVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/VideoEditorVC.swift" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_29" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -55,18 +51,6 @@
       <recent name="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -94,6 +78,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="54" y="23" width="733" height="787" key="CommitChangelistDialog2" timestamp="1592311359044">
+      <screen x="54" y="23" width="1386" height="787" />
+    </state>
+    <state x="54" y="23" width="733" height="787" key="CommitChangelistDialog2/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592311359044" />
+    <state x="193" y="91" key="DiffContextDialog" timestamp="1592309101676">
+      <screen x="54" y="23" width="1386" height="787" />
+    </state>
+    <state x="193" y="91" key="DiffContextDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592309101676" />
     <state width="1398" height="244" key="GridCell.Tab.0.bottom" timestamp="1592229827949">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -125,5 +117,13 @@
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592228716806" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836/-239.-1057.1920.1057@0.23.1440.836" timestamp="1592225566599" />
     <state x="100" y="83" width="1240" height="754" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.836@0.23.1440.836" timestamp="1592229709905" />
+    <state x="426" y="249" key="com.intellij.ide.util.TipDialog" timestamp="1592311135639">
+      <screen x="54" y="23" width="1386" height="787" />
+    </state>
+    <state x="426" y="249" key="com.intellij.ide.util.TipDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592311135639" />
+    <state x="493" y="136" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592309102769">
+      <screen x="54" y="23" width="1386" height="787" />
+    </state>
+    <state x="493" y="136" key="git4idea.branch.GitSmartOperationDialog/54.23.1386.787/-247.-1080.1920.1080@54.23.1386.787" timestamp="1592309102769" />
   </component>
 </project>
