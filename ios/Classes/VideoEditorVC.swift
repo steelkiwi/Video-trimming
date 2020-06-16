@@ -36,7 +36,10 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         loadAsset()
     }
     
-    static func instantiateVC(sourceVideoURL: URL, minDurationSeconds: Double, maxDurationSeconds: Double, completion: @escaping (String) -> ()) -> VideoEditorVC {
+    static func instantiateVC(sourceVideoURL: URL,
+                              minDurationSeconds: Double,
+                              maxDurationSeconds: Double,
+                              completion: @escaping (String) -> ()) -> VideoEditorVC {
         let vc = VideoEditorVC.instantiateVC()
         vc.sourceVideoURL = sourceVideoURL
         vc.minDurationSeconds = minDurationSeconds
