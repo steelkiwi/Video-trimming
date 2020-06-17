@@ -14,6 +14,7 @@ Video trimming
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
+  s.resources = 'Assets/**/*'
   s.dependency 'Flutter'
   s.dependency 'PryntTrimmerView', '4.0'
   s.platform = :ios, '9.0'
