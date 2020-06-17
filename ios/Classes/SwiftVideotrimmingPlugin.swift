@@ -21,13 +21,12 @@ public class SwiftVideotrimmingPlugin: NSObject, FlutterPlugin {
                 result(FlutterError(code: "SOURCE_PATH_MISSING", message: "Missing arguments", details: nil))
                 return
         }
-        let sourcePathURL = URL(fileURLWithPath: sourcePath)
-        let vc = VideoEditorVC.instantiateVC(sourceVideoURL: sourcePathURL,
-                                             minDurationSeconds: minDurationSeconds,
-                                             maxDurationSeconds: maxDurationSeconds,
-                                             completion: { outputVideoPath in
+        guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else { return }
+        NavigationManager.showVideoEditorVC(fromVC: rootVC,
+                                            sourcePathURL: URL(fileURLWithPath: sourcePath),
+                                            minDurationSeconds: minDurationSeconds,
+                                            maxDurationSeconds: maxDurationSeconds) { (outputVideoPath) in
                                                 result(outputVideoPath)
-        })
-        UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
+        }
     }
 }

@@ -17,8 +17,7 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     @IBOutlet private weak var startTrimTimeLabel: UILabel!
     @IBOutlet private weak var endTrimTimeLabel: UILabel!
     @IBOutlet private weak var trimmerView: TrimmerView!
-    @IBOutlet private weak var saveButton: UIButton!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var doneButton: UIBarButtonItem!
     
     static var storyboardName: StoryboardName { .videoEditor }
     
@@ -28,8 +27,6 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     private var minDurationSeconds: Double!
     private var maxDurationSeconds: Double!
     private var completion: ((String) -> ())?
-    
-    override var prefersStatusBarHidden: Bool { true }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -53,13 +50,13 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         DispatchQueue.global().async {
             let asset = AVAsset(url: self.sourceVideoURL)
             DispatchQueue.main.async {
-                self.trimmerView.asset = asset
-                self.trimmerView.delegate = self
                 self.trimmerView.minDuration = self.minDurationSeconds
                 self.trimmerView.maxDuration = self.maxDurationSeconds
+                self.trimmerView.asset = asset
+                self.trimmerView.delegate = self
                 self.updateTrimTimeLabelsUI()
                 self.addVideoPlayer(with: asset, playerView: self.playerView)
-                self.saveButton.isEnabled = true
+                self.doneButton.isEnabled = true
             }
         }
     }
@@ -114,12 +111,10 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
                                     end: endTime)
         
         exportSession.timeRange = timeRange
-        saveButton.isHidden = true
-        activityIndicator.startAnimating()
+        doneButton.isEnabled = false
         exportSession.exportAsynchronously {
             DispatchQueue.main.async {
-                self.saveButton.isHidden = false
-                self.activityIndicator.stopAnimating()
+                self.doneButton.isEnabled = true
                 switch exportSession.status {
                 case .completed:
                     self.completion?(outputURL.absoluteString)
@@ -138,7 +133,11 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
         endTrimTimeLabel.text = trimmerView.endTime?.formatted
     }
     
-    @IBAction private func saveTapped(_ sender: Any) {
+    @IBAction private func cancelTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction private func doneTapped(_ sender: Any) {
         trimVideo()
     }
 }
