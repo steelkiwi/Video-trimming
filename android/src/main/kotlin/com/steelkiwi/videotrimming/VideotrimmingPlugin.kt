@@ -21,8 +21,6 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
 
 
     override fun onAttachedToEngine(@NonNull plugin: FlutterPlugin.FlutterPluginBinding) {
-
-
         setupEngine(plugin.binaryMessenger);
 
     }
@@ -33,8 +31,14 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
 
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            val channel = MethodChannel(registrar.messenger(), CHANNEL)
-            channel.setMethodCallHandler(VideotrimmingPlugin())
+
+
+
+            val plugin = VideotrimmingPlugin()
+            plugin.setupEngine(registrar.messenger())
+            val delegate: VideoTrimDelegate = plugin.setupActivity(registrar.activity())!!
+            registrar.addActivityResultListener(delegate)
+
 
 
         }
