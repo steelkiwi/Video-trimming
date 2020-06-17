@@ -13,6 +13,7 @@ class VideoTrimming {
     @required String sourcePath,
     double minSeconds = 1,
     double maxSeconds = 15,
+    String screenTitle
   }) async {
     assert(sourcePath != null);
     assert(await File(sourcePath).exists());
@@ -21,6 +22,7 @@ class VideoTrimming {
       'source_path': sourcePath,
       'min_seconds': minSeconds,
       'max_seconds': maxSeconds,
+      'screen_title': screenTitle
     };
     final String resultPath =
         await _channel.invokeMethod(KEY_NATIVE, arguments);
