@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video_trimmer_library/video_trimmer_library.iml" filepath="$PROJECT_DIR$/.idea/modules/video_trimmer_library/video_trimmer_library.iml" group="videotrimming/video_trimmer_library" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/videotrimming.iml" filepath="$PROJECT_DIR$/.idea/modules/videotrimming.iml" group="videotrimming" />
     </modules>
   </component>

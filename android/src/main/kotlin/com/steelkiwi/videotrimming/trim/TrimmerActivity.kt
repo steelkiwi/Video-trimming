@@ -38,14 +38,14 @@ class TrimmerActivity : FlutterActivity(), VideoTrimmingListener {
             finish()
         };
         val inputVideoUri: String? = intent?.getStringExtra(EXTRA_INPUT_URI)
-        val maxSeconds: Int? = intent?.getIntExtra(EXTRA_INPUT_MAX_SECONDS, 15) ?: 15;
+        val maxSeconds: Double? = intent?.getDoubleExtra(EXTRA_INPUT_MAX_SECONDS, 15.0) ?: 15.0;
         if (inputVideoUri == null) {
             finish()
             return
         }
         //setting progressbar
         if (maxSeconds != null) {
-            videoTrimmerView.setMaxDurationInMs(maxSeconds * 1000)
+            videoTrimmerView.setMaxDurationInMs((maxSeconds * 1000).toInt())
         }
 
         videoTrimmerView.setOnK4LVideoListener(this)

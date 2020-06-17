@@ -15,7 +15,7 @@ class VideoTrimDelegate(private var activity: Activity) : PluginRegistry.Activit
     private val fileUtils: FileUtils = FileUtils()
     fun startTrim(call: MethodCall, result: MethodChannel.Result?) {
         val sourcePath = call.argument<String>("source_path")
-        val maxSeconds = call.argument<Int>("max_seconds")
+        val maxSeconds = call.argument<Double>("max_seconds")
         pendingResult = result
         val intent = Intent(activity, TrimmerActivity::class.java)
         intent.putExtra(TrimmerActivity.EXTRA_INPUT_URI, sourcePath)
