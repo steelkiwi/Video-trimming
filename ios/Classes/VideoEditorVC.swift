@@ -26,7 +26,13 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     private var sourceVideoURL: URL!
     private var minDurationSeconds: Double!
     private var maxDurationSeconds: Double!
+    private var screenTitle: String?
     private var completion: ((String) -> ())?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = screenTitle
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,11 +42,13 @@ class VideoEditorVC: UIViewController, StoryboardInstatiatable {
     static func instantiateVC(sourceVideoURL: URL,
                               minDurationSeconds: Double,
                               maxDurationSeconds: Double,
+                              screenTitle: String?,
                               completion: @escaping (String) -> ()) -> VideoEditorVC {
         let vc = VideoEditorVC.instantiateVC()
         vc.sourceVideoURL = sourceVideoURL
         vc.minDurationSeconds = minDurationSeconds
         vc.maxDurationSeconds = maxDurationSeconds
+        vc.screenTitle = screenTitle
         vc.completion = completion
         return vc
     }

@@ -11,10 +11,12 @@ class NavigationManager {
                                   sourcePathURL: URL,
                                   minDurationSeconds: Double,
                                   maxDurationSeconds: Double,
+                                  screenTitle: String? = nil,
                                   completion: @escaping (String) -> ()) {
         let vc = VideoEditorVC.instantiateVC(sourceVideoURL: sourcePathURL,
                                              minDurationSeconds: minDurationSeconds,
                                              maxDurationSeconds: maxDurationSeconds,
+                                             screenTitle: screenTitle,
                                              completion: completion)
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
