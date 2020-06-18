@@ -96,7 +96,7 @@ SPEC CHECKSUMS:
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
   video_player_web: da8cadb8274ed4f8dbee8d7171b420dedd437ce7
-  videotrimming: ac085fb2506a7ac86f600e00ce173aaf37910cfa
+  videotrimming: 2267f62c3854556eec970fdd8446f5058cff5ee8
 
 PODFILE CHECKSUM: c1b34269bf95e90b6647bf1a6afe1ab381fe5ad6
 
