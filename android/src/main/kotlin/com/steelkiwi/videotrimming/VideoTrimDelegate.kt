@@ -20,7 +20,7 @@ class VideoTrimDelegate(private var activity: Activity) : PluginRegistry.Activit
         val intent = Intent(activity, TrimmerActivity::class.java)
         intent.putExtra(TrimmerActivity.EXTRA_INPUT_URI, sourcePath)
         intent.putExtra(TrimmerActivity.EXTRA_INPUT_MAX_SECONDS, maxSeconds)
-        activity.startActivityForResult(intent, TrimmerActivity.REQUEST_VIDEO_TRIMMER)
+       // activity.startActivityForResult(intent, TrimmerActivity.REQUEST_VIDEO_TRIMMER)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {

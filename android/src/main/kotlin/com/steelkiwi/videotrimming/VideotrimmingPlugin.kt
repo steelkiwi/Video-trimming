@@ -16,23 +16,17 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private  var channel: MethodChannel?=null
     private var activityPluginBinding: ActivityPluginBinding? = null
-
     private var delegate: VideoTrimDelegate? = null
-
 
     override fun onAttachedToEngine(@NonNull plugin: FlutterPlugin.FlutterPluginBinding) {
         setupEngine(plugin.binaryMessenger);
-
     }
 
     companion object {
         private val CHANNEL = "plugins.steelkiwi.com/trimmer_video"
         private val ACTION_CHANEL_TRIM_VIDEO = "trim_video"
-
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-
-
 
             val plugin = VideotrimmingPlugin()
             plugin.setupEngine(registrar.messenger())
