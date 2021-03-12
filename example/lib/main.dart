@@ -63,10 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   _pickVideo() async {
     if (await Permission.storage.request().isGranted) {
-      File selectedFile = await FilePicker.getFile(type: FileType.video);
-      selectedPath = selectedFile.path;
+
+      FilePickerResult selectedFile = await FilePicker.platform.pickFiles(type: FileType.video);
+
+      selectedPath = selectedFile.files.single.path;
       var trimmedFile =
-          await VideoTrimming.trimVideo(sourcePath: selectedFile.path);
+          await VideoTrimming.trimVideo(sourcePath: selectedPath);
       trimmedPath = trimmedFile.path;
 
       _controller = VideoPlayerController.file(trimmedFile);
@@ -80,5 +82,5 @@ class _MyHomePageState extends State<MyHomePage> {
     ].request();
     print(statuses[Permission.location]);
 
-  }
+   }
 }

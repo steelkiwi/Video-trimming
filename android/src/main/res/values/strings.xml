@@ -6,5 +6,10 @@
     <string name="video_saved_at">Video saves at : $%1s</string>
     <string name="pick_a_video">Select or record a a video below to try it out:</string>
     <string name="short_seconds">sec</string>
-
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="select_video_text">Select 1 min video</string>
+    <string name="video_length_validation">Video should be of minimum 3 seconds</string>
+    <string name="should_allow_permission">Should allow permission to work app correct</string>
 </resources>
