@@ -12,11 +12,19 @@ class NavigationManager {
                                   minDurationSeconds: Double,
                                   maxDurationSeconds: Double,
                                   screenTitle: String? = nil,
+                                  mainColorInHex: String,
+                                  handleColorInHex: String,
+                                  positionBarColorInHex: String,
+                                  processingTitle: String,
                                   completion: @escaping (String) -> ()) {
         let vc = VideoEditorVC.instantiateVC(sourceVideoURL: sourcePathURL,
                                              minDurationSeconds: minDurationSeconds,
                                              maxDurationSeconds: maxDurationSeconds,
                                              screenTitle: screenTitle,
+                                             mainColorInHex: mainColorInHex,
+                                             handleColorInHex: handleColorInHex,
+                                             positionBarColorInHex: positionBarColorInHex,
+                                             processingTitle: processingTitle,
                                              completion: completion)
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen

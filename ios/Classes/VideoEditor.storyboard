@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,32 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udo-OM-5F2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1k-7g-GAl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="704.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9jF-ha-8kT">
+                                        <rect key="frame" x="20" y="328" width="374" height="48.5"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WBJ-yM-PdV">
+                                                <rect key="frame" x="177" y="0.0" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-K0-yHe">
+                                                <rect key="frame" x="166.5" y="28" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9jF-ha-8kT" firstAttribute="centerY" secondItem="w1k-7g-GAl" secondAttribute="centerY" id="6IH-C2-cXD"/>
+                                    <constraint firstItem="9jF-ha-8kT" firstAttribute="centerX" secondItem="w1k-7g-GAl" secondAttribute="centerX" id="IWM-6e-foU"/>
+                                    <constraint firstItem="9jF-ha-8kT" firstAttribute="width" secondItem="w1k-7g-GAl" secondAttribute="width" constant="-40" id="cfU-4d-RPI"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6N-2J-d9H">
                                 <rect key="frame" x="0.0" y="748.5" width="414" height="147.5"/>
@@ -48,7 +73,7 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5r-NX-s6S" customClass="TrimmerView" customModule="PryntTrimmerView">
                                         <rect key="frame" x="32" y="33.5" width="350" height="56"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="qug-ag-LT2"/>
                                         </constraints>
@@ -73,17 +98,21 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dPX-E3-fg2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="M6N-2J-d9H" secondAttribute="bottom" id="Ff4-qP-H7L"/>
                             <constraint firstItem="M6N-2J-d9H" firstAttribute="leading" secondItem="dPX-E3-fg2" secondAttribute="leading" id="Kff-4X-lgj"/>
+                            <constraint firstItem="M6N-2J-d9H" firstAttribute="top" secondItem="w1k-7g-GAl" secondAttribute="bottom" id="NC8-mC-qe9"/>
+                            <constraint firstItem="w1k-7g-GAl" firstAttribute="width" secondItem="Re9-gq-f8C" secondAttribute="width" id="O2Z-pY-X1l"/>
+                            <constraint firstItem="w1k-7g-GAl" firstAttribute="centerX" secondItem="dPX-E3-fg2" secondAttribute="centerX" id="OJw-ca-dln"/>
                             <constraint firstItem="Udo-OM-5F2" firstAttribute="top" secondItem="dPX-E3-fg2" secondAttribute="top" id="ORi-vV-BmS"/>
                             <constraint firstItem="M6N-2J-d9H" firstAttribute="trailing" secondItem="dPX-E3-fg2" secondAttribute="trailing" id="PoO-AB-4aj"/>
                             <constraint firstItem="dPX-E3-fg2" firstAttribute="trailing" secondItem="Udo-OM-5F2" secondAttribute="trailing" id="VfT-k1-gOj"/>
                             <constraint firstItem="Udo-OM-5F2" firstAttribute="leading" secondItem="dPX-E3-fg2" secondAttribute="leading" id="fBH-T7-u90"/>
                             <constraint firstAttribute="bottom" secondItem="Udo-OM-5F2" secondAttribute="bottom" id="gbL-Pt-tf3"/>
+                            <constraint firstItem="dPX-E3-fg2" firstAttribute="top" secondItem="w1k-7g-GAl" secondAttribute="top" id="kfY-Zy-Dh5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dPX-E3-fg2"/>
                     </view>
                     <navigationItem key="navigationItem" id="c72-Z2-Euv">
                         <barButtonItem key="leftBarButtonItem" image="Close" id="qXS-FX-dzr">
@@ -101,6 +130,8 @@
                         <outlet property="doneButton" destination="V2e-pN-HeY" id="LUH-5v-hIj"/>
                         <outlet property="endTrimTimeLabel" destination="dF0-6K-ioR" id="4JY-ZX-1xk"/>
                         <outlet property="playerView" destination="Udo-OM-5F2" id="jau-Vj-WGD"/>
+                        <outlet property="processingLabel" destination="ZUY-K0-yHe" id="bGz-Wl-rVw"/>
+                        <outlet property="processingView" destination="w1k-7g-GAl" id="ckO-28-nzJ"/>
                         <outlet property="startTrimTimeLabel" destination="hbY-NJ-DG0" id="mxh-5W-hmB"/>
                         <outlet property="trimTimeLabelsView" destination="XC9-Y9-Uaw" id="ah9-uk-g5Q"/>
                         <outlet property="trimmerView" destination="A5r-NX-s6S" id="igQ-Zg-fTJ"/>
@@ -114,5 +145,8 @@
     <resources>
         <image name="Close" width="36" height="36"/>
         <image name="Done" width="36" height="36"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

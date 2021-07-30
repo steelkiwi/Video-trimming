@@ -16,6 +16,10 @@ public class SwiftVideotrimmingPlugin: NSObject, FlutterPlugin {
         }
         guard let arguments = call.arguments as? [String: Any],
             let sourcePath = arguments["source_path"] as? String,
+            let mainColorInHex = arguments["main_color"] as? String,
+            let handleColorInHex = arguments["handle_color"] as? String,
+            let positionBarColorInHex = arguments["position_bar_color"] as? String,
+            let processingTitle = arguments["processing_title"] as? String,
             let minDurationSeconds = arguments["min_seconds"] as? Double,
             let maxDurationSeconds = arguments["max_seconds"] as? Double else {
                 result(FlutterError(code: "SOURCE_PATH_MISSING", message: "Missing arguments", details: nil))
@@ -27,7 +31,11 @@ public class SwiftVideotrimmingPlugin: NSObject, FlutterPlugin {
                                             sourcePathURL: URL(fileURLWithPath: sourcePath),
                                             minDurationSeconds: minDurationSeconds,
                                             maxDurationSeconds: maxDurationSeconds,
-                                            screenTitle: screenTitle) { (outputVideoPath) in
+                                            screenTitle: screenTitle,
+                                            mainColorInHex: mainColorInHex,
+                                            handleColorInHex: handleColorInHex,
+                                            positionBarColorInHex: positionBarColorInHex,
+                                            processingTitle: processingTitle) { (outputVideoPath) in
                                                 result(outputVideoPath)
         }
     }
