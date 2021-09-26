@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -27,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  VideoPlayerController _controller;
+   VideoPlayerController? _controller;
   String selectedPath = "";
   String trimmedPath = "";
 
@@ -46,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _controller == null
                 ? Text("Video did not select")
                 : Container(
-                    child: VideoPlayer(_controller),
+                    child: VideoPlayer(_controller!),
                     height: 200,
                     width: 200,
                   ),
@@ -61,26 +59,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
   _pickVideo() async {
     if (await Permission.storage.request().isGranted) {
+      FilePickerResult? selectedFile =
+          await FilePicker.platform.pickFiles(type: FileType.video);
 
-      FilePickerResult selectedFile = await FilePicker.platform.pickFiles(type: FileType.video);
+      selectedPath = selectedFile?.files.single.path ?? "";
+      var trimmedFile = await VideoTrimming.trimVideo(sourcePath: selectedPath);
+      trimmedPath = trimmedFile?.path ?? "";
 
-      selectedPath = selectedFile.files.single.path;
-      var trimmedFile =
-          await VideoTrimming.trimVideo(sourcePath: selectedPath);
-      trimmedPath = trimmedFile.path;
+      if (trimmedFile != null) {
+        _controller = VideoPlayerController.file(trimmedFile);
+        _controller!.setLooping(true);
+        _controller!.initialize().then((_) => setState(() {}));
+        _controller!.play();
+      }
 
-      _controller = VideoPlayerController.file(trimmedFile);
-      _controller.setLooping(true);
-      _controller.initialize().then((_) => setState(() {}));
-      _controller.play();
+      Map<Permission, PermissionStatus> statuses = await [
+        Permission.storage,
+      ].request();
+      print(statuses[Permission.location]);
     }
-
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.storage,
-    ].request();
-    print(statuses[Permission.location]);
-
-   }
+  }
 }
