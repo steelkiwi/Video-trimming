@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  VideoPlayerController _controller;
+  late VideoPlayerController _controller;
   String selectedPath = "";
   String trimmedPath = "";
 
@@ -61,14 +61,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
   _pickVideo() async {
     if (await Permission.storage.request().isGranted) {
+      FilePickerResult? selectedFile =
+          await FilePicker.platform.pickFiles(type: FileType.video);
 
-      FilePickerResult selectedFile = await FilePicker.platform.pickFiles(type: FileType.video);
+      if (selectedFile == null) return;
 
-      selectedPath = selectedFile.files.single.path;
-      var trimmedFile =
-          await VideoTrimming.trimVideo(sourcePath: selectedPath);
+      selectedPath = selectedFile.files.single.path!;
+      File? trimmedFile = await VideoTrimming.trimVideo(
+          sourcePath: selectedPath, screenTitle: 'Example');
+      if (trimmedFile == null) return;
+
       trimmedPath = trimmedFile.path;
 
       _controller = VideoPlayerController.file(trimmedFile);
@@ -81,6 +86,5 @@ class _MyHomePageState extends State<MyHomePage> {
       Permission.storage,
     ].request();
     print(statuses[Permission.location]);
-
-   }
+  }
 }
