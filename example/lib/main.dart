@@ -25,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   VideoPlayerController? _controller;
+  VideoPlayerController? _controller;
   String selectedPath = "";
   String trimmedPath = "";
 
@@ -48,9 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 200,
                     width: 200,
                   ),
-            new RaisedButton(
+            new GestureDetector(
               child: new Text('Select video'),
-              onPressed: () {
+              onTap: () {
                 _pickVideo();
               },
             ),
@@ -62,8 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _pickVideo() async {
     if (await Permission.storage.request().isGranted) {
-      FilePickerResult? selectedFile =
-          await FilePicker.platform.pickFiles(type: FileType.video);
+      FilePickerResult? selectedFile = await FilePicker.platform.pickFiles(type: FileType.video);
 
       selectedPath = selectedFile?.files.single.path ?? "";
       var trimmedFile = await VideoTrimming.trimVideo(sourcePath: selectedPath);

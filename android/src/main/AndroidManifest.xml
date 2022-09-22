@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.steelkiwi.videotrimming">
-
-    <application android:theme="@style/AppTheme">
-
+    <application
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:label="videotrimming">
         <activity
             android:name=".VideoTrimmerActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
+            android:exported="true"
             android:screenOrientation="fullSensor"
             android:windowSoftInputMode="adjustPan">
             <intent-filter android:label="@string/app_name">
@@ -15,10 +16,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <!-- <data android:mimeType="*/*" /> -->
                 <data android:mimeType="video/*" />
-                <data android:mimeType="image/*" />
-                <data android:mimeType="text/*" />
             </intent-filter>
         </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
     </application>
-
 </manifest>

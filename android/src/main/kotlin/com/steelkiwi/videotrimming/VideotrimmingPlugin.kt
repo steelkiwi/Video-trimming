@@ -29,7 +29,7 @@ public class VideotrimmingPlugin : FlutterPlugin, MethodCallHandler, ActivityAwa
         fun registerWith(registrar: Registrar) {
             val plugin = VideotrimmingPlugin()
             plugin.setupEngine(registrar.messenger())
-            val delegate: VideoTrimDelegate = plugin.setupActivity(registrar.activity())!!
+            val delegate: VideoTrimDelegate = registrar.activity()?.let { plugin.setupActivity(it) }!!
             registrar.addActivityResultListener(delegate)
 
 
