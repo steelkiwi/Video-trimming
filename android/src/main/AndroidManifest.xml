@@ -2,7 +2,6 @@
     package="com.steelkiwi.videotrimming">
     <application
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
         android:label="videotrimming">
         <activity
             android:name=".VideoTrimmerActivity"
